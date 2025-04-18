@@ -8,7 +8,8 @@ import pywt  # For wavelet transform
 import joblib
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "https://stress-detector-five.vercel.app"}})
+
 
 # Load pre-trained models and scalers
 model = joblib.load('./model/stress_detection_model.pkl')
